@@ -1,3 +1,5 @@
+html: { multipart: true }
+
 <%= form_for(pin) do |f| %>
   <% if pin.errors.any? %>
     <div id="error_explanation">
@@ -20,6 +22,11 @@
     <%= f.label :description %>
     <%= f.text_area :description %>
   </div>
+
+  <div class='field'>
+  <%= f.label :image %>
+  <%= f.file_field :image %>
+</div>
 
   <div class="actions">
     <%= f.submit %>
